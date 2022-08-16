@@ -3,3 +3,4 @@ seaborn==0.11.2
 shap==0.41.0
 catboost==1.0.6
 openpyxl==3.0.9
+Numpy==1.22
