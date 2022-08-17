@@ -1,6 +1,8 @@
 
  Fake Transaction detection using Catboost, Shap & with real-time interactive dashboard made by Streamlit
 
+ if a dealer returns a product or service after get commission, we called it fake
+
  url: https://kevinbosstomorrow-fraud-detection-fraud-detection-aa1zk6.streamlitapp.com
  
 
