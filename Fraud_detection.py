@@ -212,8 +212,8 @@ with placeholder5.container():
 
     with f1:
         st.subheader('Summary plot')
-        st.write('👈 class 0: legit')
-        st.write('👉 class 1: fake')
+        st.write('👈 class 0: Real')
+        st.write('👉 class 1: Fraud')
         st.write(' ')
         st.write(' ')
         st.write(' ')
