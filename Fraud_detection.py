@@ -165,6 +165,7 @@ with placeholder3.container():
 
 
 #'''Part 2'''
+'''
 image0 = Image.open('cms.jpg')
 st.title('Model Overview')
 if st.button('View the Code for building catboost'):
@@ -192,7 +193,7 @@ with placeholder4.container():
     with f3:
         st.subheader('feature importances')
         st.image(image3)
-
+'''
 
 
 
