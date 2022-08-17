@@ -164,36 +164,6 @@ with placeholder3.container():
 
 
 
-#'''Part 2'''
-'''
-image0 = Image.open('cms.jpg')
-st.title('Model Overview')
-if st.button('View the Code for building catboost'):
-    st.image(image0)
-
-
-catmodel = CatBoostClassifier()
-catmodel.load_model("fraud")
-
-
-image1 = Image.open('classification.png')
-image2 = Image.open('confusion.png')
-image3 = Image.open('fi.png')
-
-placeholder4 = st.empty()
-with placeholder4.container():
-    f1,f2,f3 = st.columns(3)
-
-    with f1:
-        st.subheader('classification report')
-        st.image(image1)     
-    with f2:
-        st.subheader('confusion matrix')
-        st.image(image2)
-    with f3:
-        st.subheader('feature importances')
-        st.image(image3)
-'''
 
 
 
