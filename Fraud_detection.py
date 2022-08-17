@@ -201,6 +201,8 @@ with placeholder5.container():
                          labels={'x':'Original value', 'y':'shap value'})
         st.write(fig)  
 
+catmodel = CatBoostClassifier()
+catmodel.load_model("fraud")
 
 st.title('Make predictions in real time')
 outputdf = pd.DataFrame([outputdf], columns= shapdatadf.columns)
