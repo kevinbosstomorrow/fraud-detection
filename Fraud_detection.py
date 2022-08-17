@@ -243,15 +243,22 @@ st.write(outputdf)
 p1 = catmodel.predict(outputdf)[0]
 p2 = catmodel.predict_proba(outputdf)
 
-st.write(f'Predicted class: {p1}')
-st.write('Predicted class Probability')
-st.write(p2)
 
-explainer = shap.Explainer(catmodel)
-shap_values = explainer(outputdf)
+placeholder6 = st.empty()
+with placeholder6.container():
+    f1,f2 = st.columns(2)
+    with f1:
+    
+        st.write(f'Predicted class: {p1}')
+        st.write('Predicted class Probability')
+        st.write(p2)
+    with f2:
+        
+        explainer = shap.Explainer(catmodel)
+        shap_values = explainer(outputdf)
 
-#st_shap(shap.plots.waterfall(shap_values[0]),  height=500, width=1700)
-st.set_option('deprecation.showPyplotGlobalUse', False)
-shap.plots.waterfall(shap_values[0])
-st.pyplot(bbox_inches='tight')
+        #st_shap(shap.plots.waterfall(shap_values[0]),  height=500, width=1700)
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        shap.plots.waterfall(shap_values[0])
+        st.pyplot(bbox_inches='tight')
 
