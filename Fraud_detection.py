@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 plt.style.use('default')
 
 st.set_page_config(
-    page_title = 'Real-Time Fraud detection',
+    page_title = 'Real-Time Fake Transaction Detection',
     page_icon = '🕵️‍♀️',
     layout = 'wide'
 )
