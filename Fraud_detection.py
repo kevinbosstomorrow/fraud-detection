@@ -234,8 +234,8 @@ with placeholder5.container():
 st.title('Make predictions in real time')
 outputdf = pd.DataFrame([outputdf], columns= shapdatadf.columns)
 
-st.write('User input parameters below ⬇️')
-st.write(outputdf)
+#st.write('User input parameters below ⬇️')
+#st.write(outputdf)
 
 
 
@@ -248,7 +248,8 @@ placeholder6 = st.empty()
 with placeholder6.container():
     f1,f2 = st.columns(2)
     with f1:
-    
+        st.write('User input parameters below ⬇️')
+        st.write(outputdf)
         st.write(f'Predicted class: {p1}')
         st.write('Predicted class Probability')
         st.write(p2)
