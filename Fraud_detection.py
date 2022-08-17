@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 plt.style.use('default')
 
 st.set_page_config(
-    page_title = 'Real-Time Fake Transaction Detection',
+    page_title = 'Real-Time Fraud Detection',
     page_icon = '🕵️‍♀️',
     layout = 'wide'
 )
@@ -31,7 +31,7 @@ st.set_page_config(
 # dashboard title
 #st.title("Real-Time Fraud Detection Dashboard")
 st.markdown("<h1 style='text-align: center; color: black;'>机器学习： 实时识别出虚假销售</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: black;'>Real-Time Fake Transaction Detection</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Real-Time Fraud Detection</h1>", unsafe_allow_html=True)
 
 # side-bar 
 def user_input_features():
@@ -62,7 +62,7 @@ st.title('Dataset')
 if st.button('View some random data'):
     st.write(df.sample(5))
     
-st.write(f'The dataset is trained on Catboost with totally length of: {len(df)}. 0️⃣ means its a real transaction, 1️⃣ means its a fake transaction. data is unbalanced (not⚖️)')
+st.write(f'The dataset is trained on Catboost with totally length of: {len(df)}. 0️⃣ means its a real transaction, 1️⃣ means its a Fraud transaction. data is unbalanced (not⚖️)')
 
 
 unbalancedf = pd.DataFrame(df.Class.value_counts())
@@ -83,7 +83,7 @@ with placeholder.container():
         a10 = df[df['Class'] == 0]['Action1']
         hist_data = [a11, a10]
         #group_labels = ['Real', 'Fake']
-        fig = ff.create_distplot(hist_data,group_labels = ['fake', 'legit'])
+        fig = ff.create_distplot(hist_data,group_labels = ['Fraud', 'legit'])
         fig.update_layout(title_text='Action 1')
         st.plotly_chart(fig, use_container_width=True)
     with f2:
@@ -91,7 +91,7 @@ with placeholder.container():
         a20 = df[df['Class'] == 0]['Action2']
         hist_data = [a21, a20]
         #group_labels = ['Real', 'Fake']
-        fig = ff.create_distplot(hist_data,group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data,group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Action 2')
         st.plotly_chart(fig, use_container_width=True)
     with f3:
@@ -99,7 +99,7 @@ with placeholder.container():
         a30 = df[df['Class'] == 0]['Action3']
         hist_data = [a31, a30]
         #group_labels = []
-        fig = ff.create_distplot(hist_data, group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data, group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Action 3')
         st.plotly_chart(fig, use_container_width=True)
 
@@ -111,7 +111,7 @@ with placeholder2.container():
         a40 = df[df['Class'] == 0]['Action4']
         hist_data = [a41, a40]
         #group_labels = ['Real', 'Fake']
-        fig = ff.create_distplot(hist_data, group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data, group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Action 4')
         st.plotly_chart(fig, use_container_width=True)
     with f2:
@@ -119,7 +119,7 @@ with placeholder2.container():
         a50 = df[df['Class'] == 0]['Action5']
         hist_data = [a51, a50]
         #group_labels = ['Real', 'Fake']
-        fig = ff.create_distplot(hist_data, group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data, group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Action 5')
         st.plotly_chart(fig, use_container_width=True)
     with f3:
@@ -127,7 +127,7 @@ with placeholder2.container():
         a60 = df[df['Class'] == 0]['Action6']
         hist_data = [a61, a60]
         #group_labels = ['Real', 'Fake']
-        fig = ff.create_distplot(hist_data, group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data, group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Action 6')
         st.plotly_chart(fig, use_container_width=True)
 
@@ -148,7 +148,7 @@ with placeholder3.container():
         hist_data = [as1, as0]
         #group_labels = ['1', '0']
         colors = [px.colors.qualitative.Plotly[0], px.colors.qualitative.Plotly[1]]
-        fig = ff.create_distplot(hist_data, colors=colors, group_labels = ['fake', 'real'])
+        fig = ff.create_distplot(hist_data, colors=colors, group_labels = ['Fraud', 'real'])
         fig.update_layout(title_text='Sales Amount')
         st.plotly_chart(fig, use_container_width=True)
     with f2:
