@@ -225,6 +225,7 @@ with placeholder6.container():
         st.write(outputdf)
         st.write(f'Predicted class: {p1}')
         st.write('Predicted class Probability')
+        st.write('0️⃣ means its a real transaction, 1️⃣ means its a Fraud transaction')
         st.write(p2)
     with f2:
         
